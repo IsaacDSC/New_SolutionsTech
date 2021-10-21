@@ -1,0 +1,227 @@
+<div class="card">
+    <div class="card-header border-transparent">
+        <h3 class="card-title">Ordens de Serviço</h3>
+
+        <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table m-0">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Cliente</th>
+                        <th>Contato</th>
+                        <th>Sistema</th>
+                        <th>Status</th>
+                        <th>Revendedor</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each sales}}
+                    <tr>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                OS00{{id}}
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                {{companyName}} - {{client}}
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                {{clientTell}}
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                {{name}}
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                <span class="badge badge-success">{{status}}</span>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                <div class="sparkbar" data-color="#00a65a" data-height="20">{{username}} - {{telephone}}
+                                </div>
+                            </button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn" data-toggle="modal" data-target="#attendance{{id}}">
+                                {{trataData updatedAt}}
+                            </button>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer clearfix">
+        <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+        <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+    </div>
+    <!-- /.card-footer -->
+</div>
+
+
+{{#each sales}}
+<div class="modal" tabindex="-1" id="attendance{{id}}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-center">Venda 0{{id}}</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="container">
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <p>
+                                <strong></strong> Status: {{status}}.
+                            </p>
+                            <div class="row">
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Em Processo">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="0">
+                                        <button class="btn btn-success col-12"> Em Processo</button>
+                                    </form>
+                                </div>
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Em Desenvolvimento">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="0">
+                                        <button class="btn btn-success col-12"> Em Desenvolvimento</button>
+                                    </form>
+                                </div>
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Configurando">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="0">
+                                        <button class="btn btn-success col-12"> Configurando</button>
+                                    </form>
+                                </div>
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Entregue">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="0">
+                                        <button class="btn btn-success col-12"> Entregue</button>
+                                    </form>
+                                </div>
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Em Uso">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="1">
+                                        <button class="btn btn-success col-12">Em Uso</button>
+                                    </form>
+                                </div>
+                                <div class="col-6 mt-1">
+                                    <form action="/solutions/status" method="post">
+                                        <input type="hidden" name="status" value="Com Problema">
+                                        <input type="hidden" name="id" value="{{id}}">
+                                        <input type="hidden" name="active" value="1">
+                                        <button class="btn btn-success col-12">Com Problema</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                            <h4>Cliente</h4>
+                            <hr>
+                            <h5 class="text-left">
+                                <i class="fas fa-user"></i> {{client}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-building"></i> {{companyName}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-file-alt"></i> {{clientDocument}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-phone-alt"></i> {{clientTell}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-map-marker-alt"></i> {{clientCEP}}
+                            </h5>
+                            {{#if ative}}
+                            <h5 class="text-left">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </h5>
+                            {{else}}
+                            <h5 class="text-left">
+                                Ativo? <i class="far fa-thumbs-down"></i>
+                            </h5>
+                            {{/if}}
+                        </div>
+                        <div class="col">
+                            <hr>
+                            <h4>Sistema</h4>
+                            <hr>
+                            <h5>
+                                <i class="fas fa-tv"></i> {{name}}
+                            </h5>
+                            <h5>
+                                <i class="fas fa-money-bill"></i> {{dinheiro value}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-file-alt"></i> {{contract}} Meses
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-table"></i> {{trataData DatePayment}} <small>
+                                    Pagamento
+                                </small>
+                            </h5>
+                            <h5 class="text-left">
+                                status: {{status}}
+                            </h5>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                            <h4 class="text-center">Revendedor</h4>
+                            <hr>
+                            <h5 class="text-left">
+                                <i class="fas fa-user-tie"></i> {{username}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-phone-alt"></i> {{telephone}}
+                            </h5>
+                            <h5 class="text-left">
+                                <i class="fas fa-envelope-open-text"></i> {{email}}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}

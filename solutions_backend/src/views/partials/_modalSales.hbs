@@ -1,0 +1,35 @@
+<div class="modal" tabindex="-1" role="dialog" id="modalAddClient" style="background-color: rgba(0, 0, 0, 0.842);">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          <i class="fas fa-user"></i>
+          Adicione o contato agora!
+        </h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="/client/register" method="post">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" class="form-control" name="name" id="" placeholder="Digite o Nome" required>
+            <label for="">Documento</label>
+            <input type="number" class="form-control" name="document" id="" placeholder="Digite o CNPJ ou CPF" required>
+            <label for="">Email</label>
+            <input type="email" class="form-control" name="email" id="" placeholder="Digite o E-mail" required>
+            <label for="">Telefone</label>
+            <input type="number" class="form-control" name="tell" id="" placeholder="Digite o Telefone" required>
+            <label for="">CEP</label>
+            <input type="number" class="form-control" name="CEP" id="" placeholder="Digite o CEP" required>
+            <label for="">Endereço</label>
+            <textarea name="address" id="" cols="30" rows="5" class="form-control"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

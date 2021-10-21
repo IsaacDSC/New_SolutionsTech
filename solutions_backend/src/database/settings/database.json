@@ -1,0 +1,15 @@
+{
+"dialect": "mysql",
+"database": "solutions",
+"port": 3306,
+"host": "db",
+"username": "dev",
+"password": "secret",
+"define": {
+        "timestamps": true
+    }
+}
+
+
+
+

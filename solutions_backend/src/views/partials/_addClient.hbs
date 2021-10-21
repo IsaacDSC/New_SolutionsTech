@@ -1,0 +1,44 @@
+<!-- Modal -->
+<section id="showcase">
+    <div class="container-fluid right-position">
+        <div class="modal" tabindex="-1" style="top: 80px;" id="AddClientsModal">
+            <div class="modal-dialog ">
+                <div class="modal-content" style="background-color: #04010aad;">
+                    <div class="modal-header">
+                        <h5 class="text-center text-light">Cadastro de Cliente</h5>
+                        <button type="button" class="btn-close btn-danger" style="color: white;" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <form action="/create/clients" method="post">
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control mt-1 mb-1" name="companyName"
+                                            placeholder="Nome Empresa">
+                                        <input type="text" class="form-control mt-1 mb-1" name="completeName"
+                                            placeholder="Nome Completo">
+                                        <input type="date" class="form-control mt-1 mb-1" name="birthday"
+                                            placeholder="Data de Nascimento">
+                                    </div>
+                                    <div class="col">
+                                        <input type="text" class="form-control mt-1 mb-1" name="document"
+                                            placeholder="CNPJ ou CPF">
+                                        <input type="text" class="form-control mt-1 mb-1" name="email"
+                                            placeholder="E-mail">
+                                        <input type="text" class="form-control mt-1 mb-1" name="telephone"
+                                            placeholder="Telefone">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Sair</button>
+                            <button type="submit" class="btn btn-light">Enviar e Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

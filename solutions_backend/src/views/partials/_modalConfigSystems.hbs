@@ -1,0 +1,210 @@
+{{!-- ====================================================
+                            REGISTRAR
+========================================================= --}}
+
+<div class="modal" tabindex="-1" id="registerSystems">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registre agora o novo sistema !</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/systems/register" method="post">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <label for="name">App name</label>
+                                <input type="text" name="name" id="name" class="form-control">
+                                <label for="tecnology">Tecnology's used</label>
+                                <textarea name="tecnology" id="tecnology" cols="30" rows="3"
+                                    class="form-control"></textarea>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="contract">Contract min</label>
+                                        <input type="text" name="contract" id="contract" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Day of produce</label>
+                                        <input type="text" name="dayProduce" id="dayProduce" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Addicted Xp</label>
+                                        <input type="text" name="xp" id="xp" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Cost day produce</label>
+                                        <input type="text" name="cost" id="cost" class="form-control">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Sale Value</label>
+                                        <input type="text" name="value" id="value" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary col-4" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success col-4">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="EditSystems">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Área para Editar</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            {{#each systems}}
+            <form action="/systems/edit" method="post">
+                <div class="modal-body">
+                    <div class="container">
+                        <hr>
+                        <h5 class="text-center">{{name}}</h5>
+                        <input type="hidden" name="name" value="{{name}}">
+                        <hr>
+                        <div class="row">
+                            <div class="col">
+                                <label for="tecnology">Tecnology's used</label>
+                                <textarea name="tecnology" id="tecnology" cols="30" rows="3"
+                                    class="form-control">{{tecnology}}</textarea>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="contract">Contract min</label>
+                                        <input type="text" name="contract" id="contract" class="form-control"
+                                            value="{{contract}}">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Day of produce</label>
+                                        <input type="text" name="dayProduce" id="dayProduce" class="form-control"
+                                            value="{{DayProduce}}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="">Cost produce</label>
+                                        <input type="text" name="cost" id="cost" class="form-control" value="{{cost}}">
+                                    </div>
+                                    <div class="col">
+                                        <label for="">Sale Value</label>
+                                        <input type="text" name="value" id="value" class="form-control"
+                                            value="{{value}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary col-4" data-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-success col-4">Cadastrar</button>
+                </div>
+            </form>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="DeleteSystems">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete System in Failure</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {{#each systems}}
+                <form action="/systems/delete" method="post">
+                    <input type="hidden" name="name" value="{{name}}">
+                    <hr>
+                    <div class="card">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <h5>Nome: {{name}}</h5>
+                                    <h5>Tecnologias: {{tecnology}}</h5>
+                                    <h5>DayProduce:{{dayProduce}}</h5>
+                                    <h5>Cost:{{cost}}</h5>
+                                    <h5>Value:{{value}}</h5>
+                                    <h5>min time contract:{{contract}}</h5>
+                                    <h5>active: {{active}}</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-danger mb-2 col-12">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Apagar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+                {{/each}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary col-4" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" id="pauseSystem">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Active or Desactive Aplications</h5>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="containter">
+                    {{#each systems}}
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            <h5>{{name}}</h5>
+                            <h5>{{tecnology}}</h5>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col">
+                            {{#if active}}
+                            <form action="/systems/pause" method="post">
+                                <input type="hidden" name="active" value="false">
+                                <input type="hidden" name="name" value="{{name}}">
+                                <button type="submit" class="btn btn-warning">
+                                    <i class="fas fa-pause-circle"></i>
+                                    DESATIVAR
+                                </button>
+                            </form>
+                            {{else}}
+                            <form action="/systems/pause" method="post">
+                                <input type="hidden" name="active" value="true">
+                                <input type="hidden" name="name" value="{{name}}">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-play-circle"></i>
+                                    ATIVAR
+                                </button>
+                            </form>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

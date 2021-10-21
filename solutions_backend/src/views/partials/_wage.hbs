@@ -1,0 +1,46 @@
+
+<section id="showcase">
+    <div class="container-fluid right-position">
+        <div class="modal" tabindex="-1" style="top: 80px;" id="revendedor"
+            style="background-color: rgba(0, 0, 0, 0.671);">
+            <div class="modal-dialog">
+                <div class="modal-content" style="background-color: #18033aad;">
+                    <div class="modal-header">
+                        <h5 class="text-center"></h5>
+                        <button type="button" class="btn-close btn-danger" style="color: white;" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <form action="/dealers" method="post">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col-8">
+                                    <label for="" style="color: rgb(248, 248, 248);">Nome Completo</label>
+                                    <input type="text" name="name" class="form-control"
+                                        placeholder="Digie seu nome completo" required>
+                                    <label for="" style="color: rgb(248, 248, 248);">CPF/CNPJ</label>
+                                    <input type="text" name="document" id="" class="form-control"
+                                        placeholder="Digite seu CPF ou RG" required>
+                                    <label for="" style="color: rgb(248, 248, 248);">Email</label>
+                                    <input type="text" name="email" id="" class="form-control"
+                                        placeholder="Digite seu melhor e-mail" required>
+                                    <label for="" style="color: rgb(248, 248, 248);">Telefone</label>
+                                    <input type="text" name="telephone" id="" class="form-control"
+                                        placeholder="Digite seu numero de telefone" required>
+                                    <label for="CEP" style="color: rgb(248, 248, 248);">CEP</label>
+                                    <input type="text" name="CEP" id="CEP" class="form-control"
+                                        placeholder="Digite seu CEP" required>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Sair</button>
+                            <button type="submit" class="btn btn-success">Enviar e Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,312 @@
+{{>_modalConfigSystems}}
+
+<style>
+    div.scrollmenu {
+        background-color: #333;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+    }
+
+    div.scrollmenu a:hover {
+        background-color: #777;
+    }
+
+    @media only screen and (max-width: 600px) {
+        #btngroup {
+            flex-wrap: wrap;
+        }
+    }
+</style>
+
+{{!-- {{>_configClassMenu}}
+{{>_DeleteEmployees}} --}}
+
+<div class="container">
+    <div class="card-body mt-3">
+        {{>_msg}}
+    </div>
+</div>
+
+<div class="container" id="config">
+    <div class="card">
+        <div class="card-body">
+            <h2>Configurações Gerais</h2>
+            <hr>
+            <div class="row mt-4">
+                <div class="col-sm-12 col-md-12 col-xl-6">
+                    <form action="/config/contact/register" method="post">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-xl-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-xl-9">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 for="">Titulo Contato</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="text" class="form-control" name="titleOne"
+                                                            placeholder="Digite o Titulo" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_One_title}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <h5 for="">WhatsApp da Loja</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="number" class="form-control" name="telephoneOne"
+                                                            placeholder="(DDD) NUMERO" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_One}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-xl-3 mt-3">
+                                            <button class="btn btn-success mt-3 col-12"><i
+                                                    class="fab fa-whatsapp text-lg"></i> Registar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-xl-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-xl-9">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 for="">Titulo Contato</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="text" class="form-control" name="titleTow"
+                                                            placeholder="Digite o Titulo" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_Tow_title}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <h5 for="">WhatsApp da Loja</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="number" class="form-control" name="telephoneTow"
+                                                            placeholder="(DDD) NUMERO" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_Tow}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-xl-3 mt-3">
+                                            <button class="btn btn-success mt-3 col-12"><i
+                                                    class="fab fa-whatsapp text-lg"></i>
+                                                Registar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-xl-12">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-xl-9">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 for="">Titulo Contato</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="text" class="form-control" name="titleThree"
+                                                            placeholder="Digite o Titulo" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_Three_title}}">
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <h5 for="">WhatsApp da Loja</h5>
+                                                    <div class="input-group flex-nowrap">
+                                                        <input type="number" class="form-control" name="telephoneThree"
+                                                            placeholder="(DDD) NUMERO" aria-label="Username"
+                                                            aria-describedby="addon-wrapping"
+                                                            value="{{configurations.0.contact_Three}}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-12 col-xl-3 mt-3">
+                                            <button class="btn btn-success mt-3 col-12"><i
+                                                    class="fab fa-whatsapp text-lg"></i>
+                                                Registar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                            </div>
+                            <div class="row col-sm-12 col-md-12 col-12 mt-3">
+                                <div class="col">
+                                    <h5 class="text-left mt-1">Cadastrar Sistemas</h5>
+                                    <hr>
+                                    <div class="scrollmenu">
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#registerSystems" style="border-radius: 5px;">
+                                            <i class="fas fa-notes-medical"></i>
+                                            Cadastar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#EditSystems" style="border-radius: 5px;">
+                                            <i class="fas fa-edit"></i>
+                                            Editar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#DeleteSystems" style="border-radius: 5px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                            Apagar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#pauseSystem" style="border-radius: 5px;">
+                                            <i class="fas fa-pause-circle"></i>
+                                            Pausar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row col-sm-12 col-md-12 col-12 mt-3">
+                                <div class="col">
+                                    <h5 class="text-left mt-1">Área de Promoções</h5>
+                                    <hr>
+                                    <div class="scrollmenu">
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#addClass" style="border-radius: 5px;">
+                                            <i class="fas fa-notes-medical"></i>
+                                            Cadastar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#editClass" style="border-radius: 5px;">
+                                            <i class="fas fa-edit"></i>
+                                            Editar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#DeleteSystems" style="border-radius: 5px;">
+                                            <i class="fas fa-trash-alt"></i>
+                                            Apagar
+                                        </button>
+                                        <button type="button" class="btn btn-dark col-4" data-toggle="modal"
+                                            data-target="#dellClass" style="border-radius: 5px;">
+                                            <i class="fas fa-edit"></i>
+                                            Pausar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+                </div>
+
+                <div class="col-lg-6 col-sm-12 bm-5 mt-3"
+                    style="background-color: rgba(0, 0, 0, 0.623); border-radius:5px; color:white;">
+                    <hr>
+                    <h5 class="text-left mt-3"> Registrar Funcionários</h5>
+                    <hr>
+                    <form action="/config/employee/register" method="post">
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Username</label>
+                                <input type="text" name="username" class="form-control"
+                                    placeholder="Digite o username do funcionário">
+                            </div>
+                            <div class="col">
+                                <label for="">Telefone</label>
+                                <input type="text" name="telephone" class="form-control"
+                                    placeholder="Digite o telefone do funcionário">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Nome</label>
+                                <input type="text" name="name" class="form-control"
+                                    placeholder="Digite o nome completo">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="">Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Digite o email">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-1">
+                            <div class="col">
+                                <input type="radio" name="permission" value="admin" checked>
+                                <span class="ml-1"> Conceder Permissões de Superuser</span><br>
+                                <input type="radio" name="permission" value="marketing">
+                                <span class="ml-1"> Conceder Permissões de Marketing</span>
+
+                                <p><strong>Primeiro acesso: </strong><small>Primeira senha do usuário é o
+                                        telefone</small></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row mt-3">
+                            <div class="col"></div>
+                            <div class="col-8">
+                                <button class="btn btn-dark col-12 mb-3">Registrar</button>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row mt-3">
+                <div class="col">
+                    <h4>Dar baixa em funcionário</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-8">
+                            <button type="button" class="btn btn-outline-danger col-12" data-bs-toggle="modal"
+                                data-bs-target="#DeleteEmployeed">Retirar do sistema</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    {{!-- {{>_mercadoPago}} --}}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
